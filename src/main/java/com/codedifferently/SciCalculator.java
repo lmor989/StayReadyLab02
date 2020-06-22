@@ -3,29 +3,37 @@ package com.codedifferently;
 public class SciCalculator 
 {
     private double currentValue;
+    private CoreFeatures core;
+    private DisplayMode display;
 
     public static void main( String[] args )
     {
-        SciCalculator calc = new SciCalculator(10);
-        System.out.println(calc.divide(0));
-        
+        SciCalculator calc = new SciCalculator();
+        calc.core.add(5);
     }
 
     // constructors
-
     public SciCalculator() {
-        currentValue = 0;
+        this.currentValue = 0;
+        core = new CoreFeatures();
+        display = new DisplayMode();
     }
 
+    // overload for starting at user input
     public SciCalculator(double currentValue) {
         this.currentValue = currentValue;
+        core = new CoreFeatures();
+        display = new DisplayMode();
     }
 
-    // Core Features
-    //**********************************************
     // Display current value
     public Double getCurrentValue() {
         return currentValue;
+    }
+
+    // Updates current value to result of operation
+    public void setCurrentValue(double num) {
+        currentValue = num;
     }
 
     // Clear Display
@@ -33,57 +41,17 @@ public class SciCalculator
         currentValue = 0;
     }
 
-    // Add method
-    public Double add(double num) {
-        currentValue += num;
-        return currentValue;
+    // Getters for other classes
+    //----------------------------------------------
+    // Gets the core features
+    public CoreFeatures getCoreFeatures() {
+        return this.core;
     }
 
-    // Substract method
-    public Double subtract(double num) {
-        currentValue -= num;
-        return currentValue;
+    // Gets dislay mode features
+    public DisplayMode getDisplayMode() {
+        return this.display;
     }
+
     
-    // Multiply method
-    public Double multiply(double num) {
-        currentValue *= num;
-        return currentValue;
-    }
-    
-    // Divide method
-    public Double divide(double num) { 
-        currentValue /= num;
-        return currentValue;
-    }
-
-    // Square method
-    public Double square() {
-        currentValue *= currentValue;
-        return currentValue;
-    }
-
-    // Square root method
-    public Double sqrt() {
-        currentValue = Math.sqrt(currentValue);
-        return currentValue;
-    }
-
-    // Variable Exponentiation method
-    public Double vEx(Double num) {
-        currentValue = Math.pow(currentValue, num);
-        return currentValue;
-    }
-
-    // Inverse method
-    public Double inverse() {
-        currentValue = 1/currentValue;
-        return currentValue;
-    }
-
-    // Invert method
-    public Double invert() {
-        currentValue *= -1;
-        return currentValue;
-    }
 }
