@@ -5,6 +5,7 @@ import org.junit.Test;
 
 public class CoreFeaturesTest {
     SciCalculator calc;
+
     @Test
     public void addTest() {
         // Given
@@ -12,8 +13,7 @@ public class CoreFeaturesTest {
         double num = 5;
         
         // When
-        calc.getCoreFeatures().setResult(calc.getCurrentValue());
-        calc.setCurrentValue(calc.getCoreFeatures().add(num));
+        calc.setCurrentValue(calc.core.add(calc.getCurrentValue(), num));
         double expectedValue = 10;
         double actualValue = calc.getCurrentValue();
 
@@ -28,8 +28,7 @@ public class CoreFeaturesTest {
         double num = 3;
         
         // When
-        calc.getCoreFeatures().setResult(calc.getCurrentValue());
-        calc.setCurrentValue(calc.getCoreFeatures().subtract(num));
+        calc.setCurrentValue(calc.core.subtract(calc.getCurrentValue(), num));
         double expectedValue = 7;
         double actualValue = calc.getCurrentValue();
 
@@ -44,8 +43,7 @@ public class CoreFeaturesTest {
         double num = 5;
         
         // When
-        calc.getCoreFeatures().setResult(calc.getCurrentValue());
-        calc.setCurrentValue(calc.getCoreFeatures().multiply(num));
+        calc.setCurrentValue(calc.core.multiply(calc.getCurrentValue(), num));
         double expectedValue = 25;
         double actualValue = calc.getCurrentValue();
 
@@ -60,8 +58,7 @@ public class CoreFeaturesTest {
         double num = 3;
         
         // When
-        calc.getCoreFeatures().setResult(calc.getCurrentValue());
-        calc.setCurrentValue(calc.getCoreFeatures().divide(num));
+        calc.setCurrentValue(calc.core.divide(calc.getCurrentValue(), num));
         double expectedValue = 4;
         double actualValue = calc.getCurrentValue();
 
@@ -75,8 +72,7 @@ public class CoreFeaturesTest {
         calc = new SciCalculator(3);
         
         // When
-        calc.getCoreFeatures().setResult(calc.getCurrentValue());
-        calc.setCurrentValue(calc.getCoreFeatures().square());
+        calc.setCurrentValue(calc.core.square(calc.getCurrentValue()));
         double expectedValue = 9;
         double actualValue = calc.getCurrentValue();
 
@@ -90,8 +86,7 @@ public class CoreFeaturesTest {
         calc = new SciCalculator(81);
         
         // When
-        calc.getCoreFeatures().setResult(calc.getCurrentValue());
-        calc.setCurrentValue(calc.getCoreFeatures().sqrt());
+        calc.setCurrentValue(calc.core.sqrt(calc.getCurrentValue()));
         double expectedValue = 9;
         double actualValue = calc.getCurrentValue();
 
@@ -106,8 +101,7 @@ public class CoreFeaturesTest {
         double num = 3;
         
         // When
-        calc.getCoreFeatures().setResult(calc.getCurrentValue());
-        calc.setCurrentValue(calc.getCoreFeatures().vEx(num));
+        calc.setCurrentValue(calc.core.vEx(calc.getCurrentValue(), num));
         double expectedValue = 27;
         double actualValue = calc.getCurrentValue();
 
@@ -121,8 +115,7 @@ public class CoreFeaturesTest {
         calc = new SciCalculator(25);
         
         // When
-        calc.getCoreFeatures().setResult(calc.getCurrentValue());
-        calc.setCurrentValue(calc.getCoreFeatures().inverse());
+        calc.setCurrentValue(calc.core.inverse(calc.getCurrentValue()));
         double expectedValue = 0.04;
         double actualValue = calc.getCurrentValue();
 
@@ -136,8 +129,7 @@ public class CoreFeaturesTest {
         calc = new SciCalculator(100);
         
         // When
-        calc.getCoreFeatures().setResult(calc.getCurrentValue());
-        calc.setCurrentValue(calc.getCoreFeatures().invert());
+        calc.setCurrentValue(calc.core.invert(calc.getCurrentValue()));
         double expectedValue = -100;
         double actualValue = calc.getCurrentValue();
 

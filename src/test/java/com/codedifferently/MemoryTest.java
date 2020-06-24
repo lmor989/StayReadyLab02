@@ -12,9 +12,9 @@ public class MemoryTest {
         calc = new SciCalculator(50);
 
         // When
-        calc.getMemory().storeMemValue(calc.getCurrentValue());
+        calc.mem.storeMemValue(calc.getCurrentValue());
         double expectedValue = 50;
-        double actualValue = calc.getMemory().recallMem();
+        double actualValue = calc.mem.recallMem();
 
         // Then
         Assert.assertEquals(expectedValue, actualValue, 0.001);
@@ -26,10 +26,10 @@ public class MemoryTest {
         calc = new SciCalculator(50);
 
         // When
-        calc.getMemory().storeMemValue(calc.getCurrentValue());
-        calc.getMemory().addValueToMemValue(calc.getCurrentValue());
+        calc.mem.storeMemValue(calc.getCurrentValue());
+        calc.mem.addValueToMemValue(calc.getCurrentValue());
         double expectedValue = 100;
-        double actualValue = calc.getMemory().recallMem();;
+        double actualValue = calc.mem.recallMem();;
 
         // Then
         Assert.assertEquals(expectedValue, actualValue, 0.001);
@@ -41,10 +41,10 @@ public class MemoryTest {
         calc = new SciCalculator(50);
 
         // When
-        calc.getMemory().storeMemValue(calc.getCurrentValue());
-        calc.getMemory().resetMemory();
+        calc.mem.storeMemValue(calc.getCurrentValue());
+        calc.mem.resetMemory();
         double expectedValue = 0;
-        double actualValue = calc.getMemory().recallMem();;
+        double actualValue = calc.mem.recallMem();;
 
         // Then
         Assert.assertEquals(expectedValue, actualValue, 0.001);

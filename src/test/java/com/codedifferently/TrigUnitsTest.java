@@ -12,9 +12,9 @@ public class TrigUnitsTest {
         calc = new SciCalculator(30);
 
         // When
-        calc.getTrigUnits().switchUnitsMode();
+        calc.tu.switchUnitsMode();
         String expectedValue = "radians";
-        String actualValue = calc.getTrigUnits().getMode();
+        String actualValue = calc.tu.getMode();
 
         // Then
         Assert.assertEquals(expectedValue, actualValue);
@@ -26,9 +26,9 @@ public class TrigUnitsTest {
         calc = new SciCalculator(30);
 
         // When
-        calc.getTrigUnits().switchUnitsMode("degrees");
+        calc.tu.switchUnitsMode("degrees");
         String expectedValue = "degrees";
-        String actualValue = calc.getTrigUnits().getMode();
+        String actualValue = calc.tu.getMode();
 
         // Then
         Assert.assertEquals(expectedValue, actualValue);

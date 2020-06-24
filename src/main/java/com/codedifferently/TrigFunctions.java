@@ -1,54 +1,59 @@
 package com.codedifferently;
 
 public class TrigFunctions {
-    double degrees;
-    double radians;
-    double result;
-
-    // Converts the degrees to radians for trig functions, degrees for inv functions
-    public void convertToRadians(Double degrees) {
-        this.degrees = degrees;
-        radians = Math.toRadians(degrees);
-    }
-
-    // Gets radians
-    public Double getRadians() {
-        return this.radians;
-    }
+    TrigUnits tu = new TrigUnits();
 
     // Sine method
-    public Double sine() {
-        result = Math.sin(radians);
-        return result;
+    public double sine(double num) {
+        if (tu.getMode() == "degrees"){
+            return Math.sin(Math.toRadians(num));
+        } else {
+            return Math.sin(num);
+        }
     }
 
     // Cosine method
-    public Double cosine() {
-        result = Math.cos(radians);
-        return result;
+    public double cosine(double num) {
+        if (tu.getMode() == "degrees"){
+            return Math.cos(Math.toRadians(num));
+        } else {
+            return Math.cos(num);
+        }
     }
 
     // Tangent method
-    public Double tangent() {
-        result = Math.tan(radians);
-        return result;
+    public double tangent(double num) {
+        if (tu.getMode() == "degrees"){
+            return Math.tan(Math.toRadians(num));
+        } else {
+            return Math.tan(num);
+        }
     }
 
     // Inverse sine method
-    public Double invSine() {
-        result = Math.asin(degrees);
-        return result;
+    public double invSine(double num) {
+        if (tu.getMode() == "degrees"){
+            return Math.asin(num);
+        } else {
+            return Math.asin(Math.toRadians(num));
+        }
     }
 
     // Inverse sine method
-    public Double invCosine() {
-        result = Math.acos(degrees);
-        return result;
+    public double invCosine(double num) {
+        if (tu.getMode() == "degrees"){
+            return Math.acos(num);
+        } else {
+            return Math.asin(Math.toRadians(num));
+        }
     }
 
     // Inverse sine method
-    public Double invTangent() {
-        result = Math.atan(degrees);
-        return result;
+    public double invTangent(double num) {
+        if (tu.getMode() == "degrees"){
+            return Math.atan(num);
+        } else {
+            return Math.atan(Math.toRadians(num));
+        }
     }
 }

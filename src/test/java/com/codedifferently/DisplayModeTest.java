@@ -11,10 +11,10 @@ public class DisplayModeTest {
         calc = new SciCalculator(25);
         
         // When
-        calc.getDisplayMode().switchDisplayMode();
-        calc.getDisplayMode().switchDisplayMode();
+        calc.display.switchDisplayMode();
+        calc.display.switchDisplayMode();
         String expectedValue = "binary";
-        String actualValue = calc.getDisplayMode().getMode();
+        String actualValue = calc.display.getMode();
 
         //Then
         Assert.assertEquals(expectedValue, actualValue);
@@ -26,9 +26,9 @@ public class DisplayModeTest {
         calc = new SciCalculator(25);
         
         // When
-        calc.getDisplayMode().switchDisplayMode("binary");
+        calc.display.switchDisplayMode("binary");
         String expectedValue = "binary";
-        String actualValue = calc.getDisplayMode().getMode();
+        String actualValue = calc.display.getMode();
 
         //Then
         Assert.assertEquals(expectedValue, actualValue);
@@ -40,9 +40,9 @@ public class DisplayModeTest {
         calc = new SciCalculator(25);
         
         // When
-        calc.getDisplayMode().switchDisplayMode("blahblah");
+        calc.display.switchDisplayMode("blahblah");
         String expectedValue = "decimal";
-        String actualValue = calc.getDisplayMode().getMode();
+        String actualValue = calc.display.getMode();
 
         //Then
         Assert.assertEquals(expectedValue, actualValue);
@@ -55,7 +55,7 @@ public class DisplayModeTest {
         
         // When
         String expectedValue = "decimal";
-        String actualValue = calc.getDisplayMode().getMode();
+        String actualValue = calc.display.getMode();
 
         //Then
         Assert.assertEquals(expectedValue, actualValue);
