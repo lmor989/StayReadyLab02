@@ -1,7 +1,7 @@
 package com.codedifferently;
 
 public class Memory {
-    double memValue = 0;
+    private double memValue = 0;
 
     // Stores current value to memory
     public void storeMemValue(double num) {

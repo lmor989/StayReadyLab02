@@ -1,7 +1,7 @@
 package com.codedifferently;
 
 public class TrigFunctions {
-    TrigUnits tu = new TrigUnits();
+    private TrigUnits tu = new TrigUnits();
 
     // Sine method
     public double sine(double num) {

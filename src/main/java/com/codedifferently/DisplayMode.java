@@ -1,9 +1,9 @@
 package com.codedifferently;
 
 public class DisplayMode {
-    String[] listOfDisplays = {"binary", "octal", "decimal", "hexadecimal"}; 
-    int modeIndex = 2;
-    String whichMode = listOfDisplays[modeIndex];
+    private String[] listOfDisplays = {"binary", "octal", "decimal", "hexadecimal"}; 
+    private int modeIndex = 2;
+    private String whichMode = listOfDisplays[modeIndex];
 
     public void switchDisplayMode() {
         if (modeIndex == 3) {
